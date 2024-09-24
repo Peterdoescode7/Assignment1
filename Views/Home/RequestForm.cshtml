@@ -1,0 +1,60 @@
+@model EquipmentRequest.Models.UserRequest
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Request Form</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/css/styles.css" />
+</head>
+<body>
+    <h5 class="bg-primary text-white text-center m-2 p-2">Equipment Request Form</h5>
+    <form asp-action="RequestForm" method="post" class="m-2">
+        <div asp-validation-summary="All"></div>
+        <div class="form-group">
+            <label asp-for="Name" class="form-label">Your name:</label>
+            <input asp-for="Name" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Email" class="form-label">Your email:</label>
+            <input asp-for="Email"  class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Phone" class="form-label">Your phone:</label>
+            <input asp-for="Phone" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Role" class="form-label">Your role:</label>
+            <select asp-for="Role" class="form-control">
+                <option value="">Choose an option</option>
+                <option value="Student">Student</option>
+                <option value="Professor">Professor</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="EquipmentType" class="form-label">
+                What type of equipment?
+            </label>
+            <select asp-for="EquipmentType" class="form-control">
+                <option value="">Choose an option</option>
+                <option value="Laptop">Laptop</option>
+                <option value="Phone">Phone</option>
+                <option value="Tablet">Tablet</option>
+                <option value="Another">Another</option>
+            </select>
+        </div>
+        <div class="form-group">
+            <label asp-for="RequestDetails" class="form-label">Request Details:</label>
+            <input asp-for="RequestDetails" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label asp-for="Duration" class="form-label">Duration:</label>
+            <input asp-for="Duration" class="form-control" />
+        </div>
+        <button type="submit" class="btn btn-primary mt-3">Submit Request</button>
+    </form>
+</body>
+</html>

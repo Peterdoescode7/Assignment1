@@ -1,6 +1,6 @@
-@model PartyInvites.Models.GuestResponse
+@model EquipmentRequest.Models.UserRequest
 @{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <!DOCTYPE html>
 <html>
@@ -12,12 +12,7 @@
 <body class="text-center">
     <div>
         <h1>Thank you, @Model?.Name!</h1>
-        @if (Model?.WillAttend == true) {
-           @:It's great that you're coming. The drinks are already in the fridge!
-        } else {
-           @:Sorry to hear that you can't make it, but thanks for letting us know.
-        }
     </div>
-    Click <a asp-action="ListResponses">here</a> to see who is coming.
+    Click <a asp-action="ListRequests">here</a> to see current requests made by all.
 </body>
 </html>
